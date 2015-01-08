@@ -1,0 +1,369 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2014-sep-06, 12:14:32
+    Author     : Kim
+*/
+
+/*Delar upp sidan i kolumner. Kolumn-bredd väljs
+i separat css fil från http://www.responsivegridsystem.com/
+*/
+.col 
+{
+    display: block;
+    float:left;
+}
+/*  definerar utseende för dokumentets "kropp".
+    bakgrundsfärg: vit
+    text-färg: svart
+    font : avant garde, med ett antal "reserv" fonts
+    margin(avståndet från dokumentets kropp till webbläsarens kanter):
+    0(top), 0.5(right), 0(bottom) 0.5(left)""*/
+body
+{
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: "Avant Garde", Avantgarde,
+    "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;  
+    margin: 0 0.5% 0 0.5%;
+}
+/*  Loggan högst upp på hemsidan. Flyter åt vänster, tar upp 40% av fönstret i
+bredd och är 140 pixlar hög*/
+.logo
+{
+float: left;
+width: 40%;
+height: 140px;
+}
+/* rubriktext högst upp till höger på hemsidan. texten skiftas till höger
+för att göra plats åt bildloggan. Margin till höger och topp är 1.5em 
+(1em = current font size)). Sedan stylas texten till stor och fet*/
+.titleheadertext
+{
+text-align: right;
+margin-right: 1.5em;
+margin-top: 1.5em;
+font-weight: bold;
+font-size: 200%;
+}
+/*border definerar ett element som används för bakgrund i html dokumentet,
+bakgrundsfärg: svart, textfärg: vit, höjd: 50pixlar.*/
+.border
+{
+margin-top: 0px;
+padding: 0;
+background-color: #000000;
+color: #FFFFFF;
+height: 50px;
+}
+/* definerar en sökruta med 20% av skärmens bredd och inline-layout. */
+#search
+{
+display: inline;
+text-align: left;
+width: 20%;
+}
+/*Definerar en rubrik tagg, fet text och margin avstånd top och bottom  */
+h2
+{
+font-weight: bold;
+font-size: 105%;
+margin-bottom: 15px;
+margin-top: 15px;
+}
+/* definerar paragraf-taggen. Gör ett margin-avstånd efter en paragraftagg
+så att det inte blir så grötigt.*/
+p
+{
+margin-bottom: 10px
+}
+/* class för fet text */
+.bold
+{
+font-weight: bold;
+}
+/*class för rubrik på recipe - sidan  */
+.recipehead
+{
+text-align:center;
+font-size: 140%;
+}
+/* klass för att definera länkars utseende, (svart text och fet stil) */
+a
+{
+color: #000000;
+font-weight: bold;
+}
+/* Infogar ett white-space avstånd från <div class="comments" till övriga 
+element */
+.comments
+{
+margin-top:20px    
+}
+/* definerar ett block innehållandes menyn.
+bakgrundsfärg: svart, höjd:50pixlar, margin-top-27px för att "flyta in i
+elementet ovan, textfärg:vit"*/
+.headmenu
+{
+padding: 0;
+background-color: #000000;
+height: 50px;
+color: #FFFFFF;
+margin-top: -27px;
+}
+/*Definerar 2 olika ul-menyer. ul med class="menu" och ul med class="sub-menu" 
+text: centrerad, textfärg: vit.*/
+ul.menu, ul.menu ul.sub-menu, ul.menu ul.sub-menu2
+{
+    padding:0;
+    margin: 0;
+    color: #FFFFFF;
+    text-align: center;
+}
+/* listelementen i menu och sub-menu defineras.
+inline-block layout med vit textfärg.*/
+ul.menu li, ul.menu ul.sub-menu li, ul.menu ul.sub-menu2 li 
+{
+    list-style-type: none;
+    display: inline-block;
+    color: #FFFFFF;
+}
+/*Länk-utseende i <li> element i menu och sub-menu.
+texten är vit, understruken, padding (avstånd mellan länkarna) 7px.
+inline-block layout.*/
+ul.menu li a, ul.menu li ul.sub-menu li a, ul.menu li ul.sub-menu2 li a {
+    text-decoration: underline;
+    background: #000000;
+    padding: 7px;
+    display:inline-block;
+    color: #FFFFFF;
+}
+
+/*Vi gör "föräldern" till sub-menyn relativ.*/
+ul.menu li 
+{
+    position: relative;
+}
+/*style-definition för sub-menyn. sub-menyn har ingen display som default 
+(kmr däremot ändras när vi "musar" över ett element.)
+position: absolute (elementet positioneras relativt till den första positionen)
+notera att width och top här definerar inte längd och höjd på länken utan 
+det definerar sub-menyns position relativs till förälder-elementet <li> i menu*/
+ul.menu li ul.sub-menu, ul.menu li ul.sub-menu2
+{
+    display:none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 70px;
+}
+/* När vi musar över en länk i menu eller sub-menu så ändras elementets bakgrund*/
+ul.menu li a:hover, ul.menu li ul.sub-menu li a:hover,ul.menu li ul.sub-menu2 li a:hover
+{
+ background-color: #999;  
+}
+.selected
+{
+background-color: #999;    
+}
+.regandlog
+{
+font-weight: bold;
+font-size: 120%;
+}
+.redcolor
+{
+font-size: 110%;
+font-weight: bold;
+color: red;    
+}
+/*När vi musar över elementet som innehåller sub-menu så visas sub-menu*/
+/*ul.menu li:hover ul.sub-menu 
+{
+    display:block;  
+}
+*/
+/* en class som definerar bilden inuti kalendern.  */
+.calenderimg
+{
+ width: 70px; 
+ height: 70px;
+}
+/*en class som definerar bilderna på recept-sidorna */
+.recipeimg
+{
+width: 240px;
+height: 240px;
+}
+/*en class som definerar stycket med ingridienser på recept-sidorna  */
+.ingredients
+{
+margin-left: 45px;    
+}
+/*definerar innehållet i <caption> taggen. (som används för Rubriken i vår
+kalender-tabell) */
+caption
+{
+text-align: center;    
+}
+/*Definerar tabellen med class="calender". Vi gör bordern (kanterna) synliga, 
+samt att kanter intill varandra flyter samman. och redigerar font.*/
+table.calender 
+{
+   border: 1px solid #999;
+   border-collapse: collapse;
+   font-family: Georgia, Times, serif;
+}
+/*Definerar huvudelement för varje kolumn i tabellen. 
+text-transform gör precis det som antyds*/
+   table.calender th 
+{
+   border: 1px solid #999;
+   font-size: 70%;
+   text-transform: uppercase;
+}
+/* Definerar en cells innehåll.
+width och height definerar hur stor cellen ska vara.
+Vertical-align top är en vertikal variant av text-align (som ju är horisontell)
+padding avgör avståndet mellan cellens innehåll samt cellens kanter*/
+   table.calender td 
+   {
+   border: 1px solid #999;
+   height: 5em;
+   width:5em;
+   padding: 5px;
+   vertical-align: top;
+   }
+   /* definerar style på kalenderns rubrik */
+   table.calender caption 
+   {
+   font-size: 300%;
+   font-style: italic;
+   }
+   /* Definerar alla celler som har class="day" */
+   .day 
+   {
+   text-align: right;
+   }
+   /*definerar alla element med class="weekend", vilket i det här fallet
+   utgör 2 kolumner i kalendern som innehåller helg-dagar. Helgdagarna stylas
+   och får en annan bakgrundsfärg. */
+    .weekend 
+   {
+   background-color: #F3F3F3;
+   }
+   
+   .username 
+   {
+    font-weight: bold;
+   }
+
+ /*media-queries tillåter olika styles för olika media. Vi vill ha en 
+layout som är kompatibel för olika skärmupplösningar. */  
+@media all and (max-width: 480px), all and (max-height: 320px)
+{
+/* definerar listelementen i menu och sub-menu.
+Här gör vi en ändring då elementen har block-layout
+istället för inline-block. (vi vill att meny elementen
+ska stacka på varandra istället för bredden). */
+ul.menu li, ul.menu ul.sub-menu li, ul.menu ul.sub-menu2 li {
+    list-style-type: none;
+    display:block;
+    color: #FFFFFF;
+}
+/*Link Appearance i <li> element i menu och sub-menu.
+Här har vi också en skillnad i display:block istället
+för display: inline-block*/
+ul.menu li a, ul.menu li ul.sub-menu li a, ul.menu li ul.sub-menu2 li a {
+    text-decoration: underline; 
+    background: #000000;
+    padding: 7px;
+    display:block;
+    color: #FFFFFF;
+}
+/*style-definition för sub-menyn. Här gör vi en tydlig
+skillnad då vi tidigare hade en horizontell huvudmeny
+med en submenu som syntes vertikalt vid mouse-over.
+Nu är hela menyn vertikal därför gör vi även sub-menyn 
+synlig hela tiden.
+display:block istället för display:none*/
+
+
+ul.menu li:hover ul.sub-menu
+{
+display: block;
+margin-top: 30px;
+width: 100%;
+}
+ul.menu li:hover ul.sub-menu2
+{
+display: block;
+width: 100%;
+}
+/*På små skärmar gör sig inte header loggan/texten speciellt
+snyggt därför tar vi bort dem*/
+.headsection
+{
+display:none;    
+}
+/*Vi ändrar kalenderns position på små skärmar  */
+.calender
+{
+margin-top: 160px
+}
+/*bild-länkarna i kalendern gör kalendern väldigt
+osmidig för mindrestorlekar, därför tar vi bort dem.*/
+.calenderimg
+{
+display: none;    
+}
+/*Även recept-bilderna gör sig dåligt på små skärmar,
+vi tar bort dem med.*/
+.recipeimg
+{
+display:none;
+}
+/* en class som definerar stycket som innehåller
+ingridienser. , vi definerar elementets position på små 
+skärmar.*/
+.ingredients
+{
+ margin-top: -130px;
+ margin-left: 0;
+}
+/* en class som definerar stycket som innehåller
+directions. , vi definerar elementets position på små 
+skärmar.*/
+.directions
+{
+ margin-top: -130px;
+}
+/* en class som definerar stycket som innehåller
+närings-fakta. , vi definerar elementets position på små 
+skärmar.*/
+.nutrition
+{
+ margin-top: -130px;  
+}
+/* definerar rubriker på små skärmar */
+h2
+{
+margin-top: 180px;    
+}
+/*Definerar position för exempel-kommentarerna
+på små skärmar*/
+.commenting
+{
+margin-top:5px;
+}
+/*Definerar position för stycket med class="bold"     */
+.bold
+{
+margin-top: 180px;
+}
+
+}
+

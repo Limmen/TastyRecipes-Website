@@ -1,0 +1,10 @@
+#Enable file path rewriting.
+RewriteEngine On                      
+#The searched path is not an existing file or directory.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d  
+#Rewrite all paths to index.php. Append query strings. Skip all remaining rules. 
+RewriteRule ^(.*)$ index.php [QSA,L]  
+
+#The default file is index.php
+DirectoryIndex index.php

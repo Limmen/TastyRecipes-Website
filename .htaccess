@@ -1,0 +1,38 @@
+<FilesMatch "conversation.txt">
+Order allow,deny
+Deny from all
+</FilesMatch>
+<FilesMatch "meatballcomments.txt">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+#Order deny,allow
+#Deny from all
+#allow from 130.229.154.127
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 2 days"
+</IfModule>
+
+#Enable file path rewriting.
+RewriteEngine On                      
+
+#The searched path is not an existing file or directory.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d  
+#Rewrite all paths to index.php. Append query strings. Skip all remaining rules. 
+RewriteRule ^(.*)$ index.php [QSA,L]  
+
+#The default file is index.php
+DirectoryIndex index.php

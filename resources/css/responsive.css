@@ -1,0 +1,40 @@
+/*
+Copied from http://www.responsivegridsystem.com/
+
+.section
+Splits up the page horizontally. You'll need a few of these to break up the content, and you can 
+use them in your main wrapper, or within other divs.
+
+.col
+Divides the section into columns. Each column has a left margin of 1.6% (around 20 pixels on a 
+normal monitor), except the first one. Using .col:first-child { margin-left: 0; } means you don't 
+need to use class="last" anywhere. It works in all browsers since IE6.
+
+.group
+Solves floating problems, by forcing the section to self clear its children (aka the clearfix hack). 
+This is good in Firefox 3.5+, Safari 4+, Chrome, Opera 9+ and IE 6+.
+*/
+
+.section {
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+}
+
+.col {
+    display: block;
+    float:left;
+    margin: 1% 0 1% 1.6%;
+}
+
+.group:before,
+.group:after {
+    content:"";
+    display:table;
+}
+.group:after {
+    clear:both;
+}
+.group {
+    zoom:1; /* For IE 6/7 */
+}
